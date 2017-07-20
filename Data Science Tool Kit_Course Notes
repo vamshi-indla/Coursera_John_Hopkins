@@ -60,3 +60,48 @@ mv	:	move the files. Ex: mv file1 Directory2
 mv	:	also renames files. Ex: mv file1 file2
 echo	:	repeats the content. Ex: echo "Hello World"
 date	:	date is printed
+
+8) Git usage
+
+Installation: git-scm
+git is for local repositories. Github stores repo remotely on the web
+
+9) Git- Link local repository with remote
+
+mkdir ~/test.git
+cd ~/test.git
+git init
+git remote add origin https://github.com/vamshi-indla/test.git
+
+remote to local working directory:
+git clone https://github.com/vamshi-indla/test.git
+
+10) Git adding to index, before commit
+git add .
+git add -u
+git add -a
+
+# add to local repository
+git commit -m "desc of changes that happened"
+# local to remote
+git push
+
+# branching to avoid changes to original file
+
+11) Markdown
+# Heading
+## secondary Heading
+### Tertiary Heading
+* Unordered list
+Reference Documentation: http://daringfireball.net/projects/markdown/
+
+12) Types of Data analysis
+
+Descriptive
+Exploratory
+Inferrential
+Predictive
+Causal - how change in independent impact dependent variable
+Mechanistic - rare. change in independent variable impact on other independent variable
+
+13) Set of Items > Data > Information > Knowledge > Wisdom
