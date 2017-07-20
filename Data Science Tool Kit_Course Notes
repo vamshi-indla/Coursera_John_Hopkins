@@ -14,3 +14,49 @@ Subsetting
 Optimization
 Simulation
 Dates and Times
+
+2) Places to ask for help on R?
+
+Rseek.com
+Rpubs
+Stackoveflow
+Cross-validation for data analysis questions
+
+3) Best practices while taking the course?
+
+Take down notes
+Peer reviews
+Going back and forth on videos to get a better clarity on content
+
+4) What do i hope to gain from this course?
+Gaps in my Knowledge.
+
+5) What challenges do i anticipate?
+Taking out time in attending the course
+
+6) What strategies do i use to overcome challenges?
+Spend Timebound TV time
+Start day early and attend the courses
+
+7) Command Lines 
+
+Format is Command -flags arguments
+pwd 	:	print working directory
+/ 	:	root directory
+~ 	:	Home directory
+path 	: 	from root directory to pwd. Ex: C/VXI001/Mydocuments
+clear   :	clears the previous commands
+ls 	:	list files
+ls -a 	: 	hidden files are also shown
+cd	:	change directory
+cd ..	:	moves to One level up
+mkdir	:	creates folder/directory. Ex: mkdir Documents
+touch 	:	creates empty file. Ex: touch test_file
+cp	:	copy. Ex: cp test_file Documents
+cp -r	:	copy recursive. Ex: cp -r Directory1 Directory2
+rm	: 	remove file
+rm -r	:	remove directory. No undo available.**Careful**
+mv	:	move the files. Ex: mv file1 Directory2
+mv	:	also renames files. Ex: mv file1 file2
+echo	:	repeats the content. Ex: echo "Hello World"
+date	:	date is printed
