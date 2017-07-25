@@ -1,0 +1,32 @@
+1) Data types
+Atomic data types
+numeric
+integer
+character
+complex (ex: 1+i)
+Date
+PosXit and PosXct
+
+2) Coding standards
+Make it readable
+Indent
+Use only 80 characters
+Dont have more than 4 For loops
+
+3) Functions and Scoping
+
+Scopings are Lexical and Dynamics. Its primarily to determine, the values of variables defined locally in a function,
+inside a function's function, Globally etc.
+
+4) PosXIT and POSXCT is the way Time variabale is defined. Its value is length of time from 12:00:00
+DATE is the way date variable is stored. Its value is the length of time from 1970-01-01
+
+5) Control Loops
+
+If else
+for
+while
+repeat
+break
+next (skip an iteration)
+
