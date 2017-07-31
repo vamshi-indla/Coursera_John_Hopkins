@@ -30,3 +30,20 @@ repeat
 break
 next (skip an iteration)
 
+6) Str function
+provides the structure of an Object. ** Very Important **
+
+7) Debugging Options
+traceback -> provides previously executed command
+debug -> starts from the top of function
+browser -> starts anywhere in a function. 
+trace
+recover
+
+8) Profiing
+Mainly to know where the program is taking longer time.
+Rprof()
+SummaryRprof()
+
+2 options to look at it, Self and Total
+
