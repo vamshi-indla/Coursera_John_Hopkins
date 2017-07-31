@@ -33,3 +33,6 @@ Json - JSONLite Package. fromjson(filename)
 
 7) lots of material to read from different sources is provided at the end of each video.
  
+8) data.table are efficient than data.frames
+data.table has Key, which can work like python dictionary
+data.table is memory and processing efficient. It pretty much works like data.frames
