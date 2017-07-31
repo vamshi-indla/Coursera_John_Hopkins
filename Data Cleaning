@@ -23,6 +23,13 @@ Raw and processed are relative terms
 Output of this activity should be 
  Cookbook with variables, units. Also called Metadata
  How the variables are created. i.e using what transformations
- Which version of the code is used to create the output variables
+ Which version of the code is used to create the output variables 
  
+6) Reading from different formats of data
+csv - read.csv / read.csv2
+xls - XLS. read.xls / read.xls2(filename)
+xml - XML package
+Json - JSONLite Package. fromjson(filename)
+
+7) lots of material to read from different sources is provided at the end of each video.
  
