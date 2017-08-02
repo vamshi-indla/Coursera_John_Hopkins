@@ -42,8 +42,15 @@ recover
 
 8) Profiing
 Mainly to know where the program is taking longer time.
-Rprof()
-SummaryRprof()
 
-2 options to look at it, Self and Total
+#Code Snippet
+Rprof("Rprof.out", line.profiling=TRUE)
+code_functions
+Rprof(NULL) #disables
+summaryRprof
+
+# outputs are printed
+# $by.self will display time taken by each step
+# $by.total will display which upper level has taken more time. Not much useful
+
 
