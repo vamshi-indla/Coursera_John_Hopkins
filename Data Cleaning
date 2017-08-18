@@ -35,4 +35,44 @@ Json - JSONLite Package. fromjson(filename)
  
 8) data.table are efficient than data.frames
 data.table has Key, which can work like python dictionary
-data.table is memory and processing efficient. It pretty much works like data.frames
+data.table is memory and processing efficient. It pretty much works like data.frame
+
+
+10) Read xlsx file
+download.file("url",location,parameters)
+library(xlsx)
+data <- read.xlsx("filename",sheetIndex=1,header=TRUE)
+write.xlsx("filename",data)
+
+11) Reading Xml file
+library(XML)
+	data <- xmlTreeParse("url",useInternal=TRUE)
+rootNode <- xmlRoot(data)
+xmlName(rootNode) #root node name 
+names(rootNode) #whole document
+
+xmlSApply(rootNode, xmlValue) #parts of file
+xmlSApply(rootNode, "//name", xmlValue) #provides contents of name
+
+12) Reading JSON
+
+# read from JSON
+library(jsonlite)
+data <- fromJSON("url")
+names(data$owner) #variables
+data$owner$variable
+
+# convert to JSON
+data <- toJSON(iris, pretty=TRUE)
+head(data) #JSON Format
+
+13) DATA.TABLE
+
+# Faster than data frame, written in C
+# Involves learning curve
+# Faster subsetting and adding new columns. Data table doesnt create new table, unlike data.frame
+# Works like plyr package
+# setkey() faster in sorting, merging
+
+tables() #lists data.tables in memory
+
