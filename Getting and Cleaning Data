@@ -1,0 +1,183 @@
+1) Steps for Data cleaning
+
+Raw Date > Process Data > Tidy Data > Data analysis  > Data sharing/communication
+
+2) Types of Raw data
+csv
+excel
+xml
+json
+raw etc
+
+3) Data Processing is 
+Subsetting, transforming, aggregating, merging etc
+
+4) Raw Data vs Processed Data
+Fromthe source -  modified
+Clean it once -  Reproducible cleaning, for new data
+Cannot be analyzed -  Can be analyzed
+Raw and processed are relative terms
+
+5) Raw Data -> Tiny Data
+
+Output of this activity should be 
+ Cookbook with variables, units. Also called Metadata
+ How the variables are created. i.e using what transformations
+ Which version of the code is used to create the output variables 
+ 
+6) Reading from different formats of data
+csv - read.csv / read.csv2
+xls - XLS. read.xls / read.xls2(filename)
+xml - XML package
+Json - JSONLite Package. fromjson(filename)
+
+7) lots of material to read from different sources is provided at the end of each video.
+ 
+8) data.table are efficient than data.frames
+data.table has Key, which can work like python dictionary
+data.table is memory and processing efficient. It pretty much works like data.frame
+
+
+10) Read xlsx file
+download.file("url",location,parameters)
+library(xlsx)
+data <- read.xlsx("filename",sheetIndex=1,header=TRUE)
+write.xlsx("filename",data)
+
+11) Reading Xml file
+library(XML)
+	data <- xmlTreeParse("url",useInternal=TRUE)
+rootNode <- xmlRoot(data)
+xmlName(rootNode) #root node name 
+names(rootNode) #whole document
+
+xmlSApply(rootNode, xmlValue) #parts of file
+xmlSApply(rootNode, "//name", xmlValue) #provides contents of name
+
+12) Reading JSON
+
+# read from JSON
+library(jsonlite)
+data <- fromJSON("url")
+
+14) Library dplyr
+
+convert dataframe to tbl_df, then play with below functions
+Select
+arrange
+Mutant
+filter
+summarize
+group_by
+View()
+Chaining %>% ---kind of piping
+
+15) Library tidyr
+gather() - converts messy data into tidy one.
+separate()
+spread() -> spreads a variable values into multiple column variables
+parse_number() -> class_5 becomes 5
+bind_rows() -> row binding
+
+
+16) Reading mySQL
+ucscDb <- dbConnect(MySQL(), user = "genome", host="genome-mysql.cse.ucsc.edu")
+result <- dbGetQuery(ucscDb, "show databases;"); # Databases on server
+dbDisconnect(ucscDb); # disconnect from Db
+
+hg19 <- dbConnect(MySQL(), user="genome", db="hg19", host="genome-mysql.cse.ucsc.edu")
+allTables <- dbListTables(hg19)
+length(allTables)
+
+dbListFields(hg19,"HInv") #Fields of a specific table       
+
+dbGetQuery(hg19,"select count(*) from HInv") #executes a query
+
+mydf <- dbReadTable(hg19,"HInv") # One table read at a time
+
+# Getting subset records from a table of a DB, from ucsc site
+hg19 <- dbConnect(MySQL(), user="genome", db="hg19", host="genome-mysql.cse.ucsc.edu")
+query <- dbSendQuery(hg19,"select * from HInv")  #subset of records can be specific in this query
+query_results <- fetch(query,n=20)
+dbClearResult(query)
+dbDisconnect(hg19)
+
+
+17) HDF5
+source("http://bioconductor.org/biocLite.R")
+biocLite("rhdf5")
+library(rhdf5)
+created = h5createFile("example.h5")
+created
+
+h5ls("example.h5")
+df <- 1:20
+h5write(df,"example.h5","df")
+h5read("example.h5","df")
+h5ls("example.h5")
+
+18) WebScraping
+
+# Getting data from Webpages
+con <- url("url")
+htmlCode <- readLines(con)
+close(con)
+htmlCode
+
+# XML Package can also be used to extract data
+library(XML)
+con <- "url"
+html <- htmlTreeParse(con,useInternalNodes = TRUE)
+xpathSApply(html,"//title",xmlValue) #title of the html
+
+                                                                                       
+# Package Httr
+library(httr)
+html2 <- GET("url")
+content2 <- content(html2,as="text")
+parsedHtml <- htmlParse(content2,asText = TRUE)
+xpathSApply(parsedHtml,"//title",xmlValue)
+
+Reference site: https://www.r-bloggers.com/web-scraping-the-basics/
+
+19) API
+Package httr. Works well with facebook, Google, twitter, Github
+
+myapp = oauth("twitter",key="Consumerkeyhere",secret="Consumersecrethere")
+sign = sign_oauth1.0(app,token="tokenhere",token_secret="tokensecret")
+homeTL = GET("https://api.twitter.com/1.1/statuses/home_timeline.json",sig)
+#homeTL = GET("RESOURCEURL",sig)
+
+json1 = content(homeTL)
+json2 = jsonLite::fromJSON(toJSON(json1))
+json2[1,1:4]
+
+20) Access Github API
+Refer git file datasciencecoursera/oauth2_github
+
+21) Read fixed width file
+#read.fwf()
+
+x <- read.fwf(
+  file=url("http://www.cpc.ncep.noaa.gov/data/indices/wksst8110.for"),
+  skip=4,
+  widths=c(12, 7, 4, 9, 4, 9, 4, 9, 4))
+
+head(x)
+names(data$owner) #variables
+data$owner$variable
+
+# convert to JSON
+data <- toJSON(iris, pretty=TRUE)
+head(data) #JSON Format
+
+13) DATA.TABLE
+
+# Faster than data frame, written in C
+# Involves learning curve
+# Faster subsetting and adding new columns. Data table doesnt create new table, unlike data.frame
+# Works like plyr package
+# setkey() faster in sorting, merging
+
+tables() #lists data.tables in memory
+
