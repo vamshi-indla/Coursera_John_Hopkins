@@ -103,3 +103,48 @@ Course Resources:
 =================
 1. Forums
 2. For any questions:- feedback@deeplearning.ai	
+
+
+
+Neural Network Overview
+=======================
+
+1. Horizontal stack of Logistic regression becomes Neural network (wrt Classification)
+2. 3 Layers
+Input
+Hidden
+Output
+
+3. N layered neural network will have (N-1) Hidden layer.
+Input is not considered a Layer.
+
+4. Activation Functions
+Sigmoid = 1/ (1 + e^(-x))	-> (0 to 1)
+Tanh = e(z) - e(-z) / e(z) + e(-z) -> (-1 to 1)
+Rectified Linear Unit = max(0,z) -> (0 to 1)
+Leaky Relu = max(0.01,z)
+
+Hidden layers, use Tanh or RLU.
+Output Layer, use Sigmoid function
+
+5. Why does we need Non-linear activation function?
+
+- linear hidden activation function is useless for classification. It will be a basic logic regression.
+- Use non-linear activation functions for hidden layers
+
+6. Why Random Weights should be low?
+If W values are large, then Z will be large
+Z = Wt.X + b
+
+When Tanh is applied during derivatives (calculating slopes), slopes will be near zero.
+Learning takes a lot of time.
+
+b9bias) does not have that problem
+
+Some questions
+-> what to initialize?
+-> which activation function to use?
+-> whats best learning rate?
+
+
+
