@@ -1,0 +1,105 @@
+Deeplearning.ai
+
+A) Introduction to Deep Learning:
+==============================
+1. AI is new electricity
+2. Neural Network and Deep Learning
+- CAT recognition
+- Hyperparameter, Tuning, regularization, Optimization
+- Structuring Machine learning project. 
+	Train/Test/Dev.
+	E2E Deep learning.
+- CNN (Convolutional Neural Network) Primarily for Images
+- Sequence Models. LSTM, NLP, Speech recognition, Music Generation.
+
+3. Deep Learning
+- is a Very Large Neural Network
+- Formula will be Y = XW + b
+- Layers
+	Input, Hidden and Output
+
+4. Supervised Learning with NN
+Highly used in Online marketing. Whether an ad will be clicked or not.
+Some applications:
+- Real estate (Standard NN)
+- Online adveritizing(Standard NN)
+- Photo Tagging (CNN)
+- Speech Recognition (Temporal Sequence, RNN)
+- Machine translation (Temporal Sequence, RNN)
+- Autonomous driving (Hybird NN)
+
+It can be applied to both structured and unstructured data.
+Structured Data - Tables, 
+Unstructured Data - Images, speech, Text
+
+5. Rise of Deep Learning
+- Computing power increased
+- Cost of infrastructure reduced
+- Amount of data increased
+- New Algorithms (RLU is new, compared to Sigmoid Fn)
+
+4. RLU - rectified linear unit.
+Output Value does not go below zero
+
+
+B) Basics of Neural Network Programming:
+=====================================
+> Binary Classification
+	- Algo is logistic regression
+
+> COst function is Average of Loss function across all training set
+> Loss function is (Error) like RMSE.
+> Loss function in case of Logistic regression is
+	-y log(y^) + (1-y) log(1-y^)
+> Computational graph -> Forward Propagation
+> Derivative of Computational Graph -> Backward
+> Try to reduce FOR loops. Use vectorizations for efficiency.
+
+Vectorization:
+> GPUs are good at SIMD calculations. CPUs are also ok.
+> numpy np commands:
+Try to avoid FOR loops and check the vectorizations in numpy.
+
+
+C) Logical Regression as  a Neural Network:-
+1. Forward propagation Using vectorization:
+---------------------------------------
+Z = Wt.X + b
+Z = np.dot(Wt.X) + b
+Y = sigmoid(Z) -> output of Logistic regression
+
+*b will be considered as matix by numpy, not as a unary variable
+
+
+2. Background propagation Using vectorization:
+---------------------------------------
+W = X*dz
+b = (1/m)* np.sum(dz) 
+
+3. Be careful with Broadcasting.
+Use shape  like np.random.randn(5,1).
+Use dimensions where ever possible.
+
+
+a = np.random.randn(3, 3)
+b = np.random.randn(3, 1)
+c = a*b
+
+4. Sigmod derivative (Slope):
+
+sigmoid_derivative(x)=σ′(x)=σ(x)(1−σ(x))
+sigmoid(x)=σ(x)=1/ (1 + e(-x))
+
+
+
+Neural Network Programming with Hidden:
+=====================================
+
+Deep Neural Network Programming:
+=====================================
+
+	
+Course Resources:
+=================
+1. Forums
+2. For any questions:- feedback@deeplearning.ai	
