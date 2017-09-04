@@ -146,5 +146,8 @@ Some questions
 -> which activation function to use?
 -> whats best learning rate?
 
+Reference:
+http://scs.ryerson.ca/~aharley/neural-networks/
+http://cs231n.github.io/neural-networks-case-study/
 
 
