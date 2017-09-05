@@ -149,5 +149,7 @@ Some questions
 Reference:
 http://scs.ryerson.ca/~aharley/neural-networks/
 http://cs231n.github.io/neural-networks-case-study/
+for auto-reloading external module: http://stackoverflow.com/questions/1907993/autoreload-of-modules-in-ipython
+
 
 
